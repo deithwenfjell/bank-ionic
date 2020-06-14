@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Úprava klienta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngIf="klient$ | async as profil">
+    <ion-card-header>
+      <ion-card-title>Zmena údajov užívateľa {{ profil.meno | uppercase }}</ion-card-title>
+      <ion-card-subtitle><span>ID: </span>{{ profil.id }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+
+            <ion-label position="floating">Titul pred menom:</ion-label>
+            <ion-input [(ngModel)]="profil.titulPred" placeholder="Titul pred menom"> </ion-input>
+
+        </ion-item>
+
+        <ion-item>
+
+            <ion-label position="floating">Meno:</ion-label>
+            <ion-input [(ngModel)]="profil.meno" placeholder="Meno"></ion-input>
+
+
+        </ion-item>
+        <ion-item>
+
+
+            <ion-label position="floating" >Priezvisko:</ion-label>
+            <ion-input [(ngModel)]="profil.priezvisko" placeholder="Priezvisko"></ion-input>
+
+
+        </ion-item>
+        <ion-item>
+
+            <ion-label position="floating" >Titul za menom:</ion-label>
+            <ion-input [(ngModel)]="profil.titulZa" placeholder="Titul za menom"></ion-input>
+
+
+        </ion-item>
+        <ion-item>
+
+            <ion-label position="floating" >Trvalý pobyt:</ion-label>
+            <ion-input expand="block" [(ngModel)]="profil.trvalyPobyt" placeholder="Trvalý pobyt"></ion-input>
+
+
+        </ion-item>
+        <ion-item>
+
+            <ion-label position="floating" >Korešpondenčná adresa:</ion-label>
+            <ion-input [(ngModel)]="profil.korespondencnaAdresa" placeholder="Korešpondenčná adresa"></ion-input>
+
+
+        </ion-item>
+      </ion-list>
+
+      <ion-button (click)="ukonciEditaciu(profil)">
+        Hotovo
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

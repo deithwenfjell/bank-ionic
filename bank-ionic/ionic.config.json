@@ -1,0 +1,8 @@
+{
+  "name": "ionic-bank-david-klinovsky",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
